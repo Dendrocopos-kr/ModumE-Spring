@@ -3,8 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.4.xsd
+		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
@@ -36,6 +38,13 @@
 		<beans:property name="username" value="root"/>
 		<beans:property name="password" value="koreait2020"/> 
 	</beans:bean>
+	
+	<security:http>
+		<security:form-login />
+	</security:http>
+	
+	<security:authentication-manager>	
+	</security:authentication-manager>
 	
 	<beans:bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 	    <beans:constructor-arg ref="hikariConfig" />

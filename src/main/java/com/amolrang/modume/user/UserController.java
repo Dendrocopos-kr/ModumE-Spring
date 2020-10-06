@@ -16,14 +16,6 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
-	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model) {
-		model.addAttribute("viewPort", "user/login");
-		model.addAttribute("board", "discord/discord");
-		return "viewer/default";
-	}
-	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Model model) {
 		model.addAttribute("viewPort", "user/join");
