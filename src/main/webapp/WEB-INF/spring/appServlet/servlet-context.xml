@@ -14,18 +14,10 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
-	
-	<context:component-scan base-package="com.amolrang.modume" />
 	
 	<beans:bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 	    <beans:property name="poolName" value="springHikariCP" />
@@ -38,13 +30,6 @@
 		<beans:property name="username" value="root"/>
 		<beans:property name="password" value="koreait2020"/> 
 	</beans:bean>
-	
-	<security:http>
-		<security:form-login />
-	</security:http>
-	
-	<security:authentication-manager>	
-	</security:authentication-manager>
 	
 	<beans:bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 	    <beans:constructor-arg ref="hikariConfig" />
