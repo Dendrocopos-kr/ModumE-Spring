@@ -16,8 +16,8 @@ import com.amolrang.modume.model.CustomUserDetailsService;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	private CustomUserDetailsService userDetailsService;
+	//@Autowired
+	private CustomUserDetailsService userDetailsService = new CustomUserDetailsService();
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
