@@ -40,6 +40,6 @@
 		<beans:property name="configLocation" value="/WEB-INF/spring/mybatis-alias.xml"/>
 	</beans:bean>
 	
-	<mybatis-spring:scan base-package="com.amolrang.modume"/>
+	<mybatis-spring:scan base-package="com.amolrang.*"/>
 	
 </beans:beans>
