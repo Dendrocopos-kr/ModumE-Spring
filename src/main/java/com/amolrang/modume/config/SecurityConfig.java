@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		String[] guest = {"/","/main","/login","/join"};
 		String loginPage = "/login";
-		String loginProcessingUrl = "loginAction";
+		String loginProcessingUrl = "/loginAction";
 		String logoutUrl = "/logout";
 		String mainPage = "/";
 		
