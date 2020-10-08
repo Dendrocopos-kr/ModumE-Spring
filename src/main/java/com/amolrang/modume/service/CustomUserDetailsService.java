@@ -1,4 +1,4 @@
-package com.amolrang.modume.model;
+package com.amolrang.modume.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+
+import com.amolrang.modume.mapper.CustomUserMapper;
+import com.amolrang.modume.mapper.MemberDTO;
+import com.amolrang.modume.model.CustomUser;
 
 public class CustomUserDetailsService implements UserDetailsService {
 
@@ -21,7 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	 */
 
 	@Autowired
-	MemberMapper memberMapper;
+	CustomUserMapper memberMapper;
 
 	// 시큐리티의 내용 외 파라미터를 추가하고 싶을 때, 아래 사용
 	// 제약조건: Controller 에서 Auth를 점검할 때, UserCustom 으로 받아야 함.

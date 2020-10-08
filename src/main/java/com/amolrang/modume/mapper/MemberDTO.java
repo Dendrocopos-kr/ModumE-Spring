@@ -1,4 +1,4 @@
-package com.amolrang.modume.model;
+package com.amolrang.modume.mapper;
 
 import lombok.Builder;
 import lombok.Data;
